@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;1,100;1,200&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    font-family: Montserrat;
+}
+
+/* Main Page */
+
+section{
+    margin: 0px;
+    padding-left: 10px;
+    font-family: Montserrat, sans-serif;
+
+    background: url('C:\\Users\\HP\\Downloads\\gradient_wallpaper.jpg');
+
+    display: flex;
+
+    min-height: 100vh;
+
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+    /* overflow-x: hidden; */
+}
+
+p,h2{
+    color: #8f8f8f;
+}
+
+p{
+    font-size: 0.9em;
+    line-height: 23px;
+}
+
+h3{
+    margin: 0;
+    color: #2d2a30;
+}
+
+.skewed{
+    height: 250px;
+    width: 1000px; /*45em*/
+    color: #f1f1f1;
+
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    background: white;
+    margin: 2em 0;
+
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+}
+
+.text{
+    padding: 1.5em;
+    width: 50%;
+
+    display: flex;
+    justify-content: space-evenly;
+
+    align-items: flex-start;
+    flex-direction: column;
+
+}
+
+a{
+    color: #2d2a30;
+    text-decoration: none;
+}
+
+.image{
+
+    width: calc(50% + 50px);
+    height: 100%;
+
+    position: relative;
+    overflow: hidden; 
+}
+
+
+
+
+img{
+    width: 120%;
+}
+
+@media  screen and (max-width: 750px) {
+    /* .skewed{
+        display: block;
+        width: 20em;
+    } */
+
+    .image, .text{
+        width: 100%;
+    }
+
+    img{width: 160%;}
+
+    /* .skewed .image::before{
+        width: 120%;
+        height: 40%;
+        top: -5em;
+        left: 50%;
+        transform: 
+        translateX(-50%) rotate(10deg);
+    } */
+
+    /* .skewed-left .image::before{
+        transform: translateX(-50%) rotate(-10deg);
+
+        top: initial;
+        bottom: -5em;
+    } */
+}
+
+/* Button */
+
+a{
+    position: relative;
+    display: inline-block;
+
+    padding: 10px 20px;
+    color: black;
+
+    text-transform: uppercase;
+    letter-spacing: 4px;
+
+    text-decoration: none;
+
+    font-size: 24px;
+}
+
+
+a span{
+    position: absolute;
+    display: block;
+
+    background: black;
+    transition: transform ease-in-out 0.2s;
+}
+
+a span:nth-child(1){
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 1px;
+
+    transform: scaleX(0);
+    transform-origin: right;
+
+    transition-delay: 0s;
+}
+
+a:hover span:nth-child(1){
+     transform: scaleX(1);
+     transform-origin: left;
+}
+
+a span:nth-child(3){
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 1px;
+
+    transform: scaleX(0);
+    transform-origin: left;
+
+    transition-delay: 0.4s;
+}
+
+a:hover span:nth-child(3){
+     transform: scaleX(1);
+     transform-origin: right;
+}
+
+a span:nth-child(2){
+    top: 0;
+    right: 0;
+
+    width: 1px;
+    height: 100%;
+
+    transform: scaleY(0);
+    transform-origin: bottom;
+
+    transition-delay: 0.2s;
+}
+
+a:hover span:nth-child(2){
+     transform: scaleY(1);
+     transform-origin: top;
+}
+
+a span:nth-child(4){
+    top: 0;
+    left: 0;
+
+    width: 1px;
+    height: 100%;
+
+    transform: scaleY(0);
+    transform-origin: top;
+
+    transition-delay: 0.6s;
+}
+
+a:hover span:nth-child(4){
+     transform: scaleY(1);
+     transform-origin: bottom;
+}
+
+
+.search-container{
+    background: #fff;
+    height: 30px;
+    border-radius: 30px;
+    padding: 30px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.8s;
+ 
+  box-shadow:  4px 4px 6px 0 rgba(255,255,255,.3),
+              -4px -4px 6px 0 rgba(116, 125, 136, .2), 
+    inset -4px -4px 6px 0 rgba(255,255,255,.2),
+    inset 4px 4px 6px 0 rgba(0, 0, 0, .2);
+}
+
+.search-container:hover > .search-input{
+    width: 400px;
+}
+
+.search-container .search-input{
+    background: transparent;
+    border: none;
+    outline:none;
+    width: 0px;
+    font-weight: 500;
+    font-size: 16px;
+    transition: 0.8s;
+
+}
+
+.search-container .search-btn .fas{
+    color: #5cbdbb;
+}
+
+@keyframes hoverShake {
+  0% {transform: skew(0deg,0deg);}
+  25% {transform: skew(5deg, 5deg);}
+  75% {transform: skew(-5deg, -5deg);}
+  100% {transform: skew(0deg,0deg);}
+}
+
+.search-container:hover{
+  animation: hoverShake 0.15s linear 3;
+}
